@@ -1,0 +1,10 @@
+@import "tailwindcss";
+/* Custom CSS for perspective and rotateY */
+.perspective {
+  perspective: 1000px;
+}
+
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+  transition: transform 0.7s ease;
+}
