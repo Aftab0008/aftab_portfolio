@@ -118,14 +118,14 @@ function Hero() {
           <span className="border-r-2 border-white animate-pulse ml-1">&nbsp;</span>
         </p>
 
-        {/* Resume Button */}
-        <a
-          href="/resume.pdf"
-          download
-          className="inline-block mt-4 px-5 py-2 text-sm sm:text-base bg-white text-indigo-600 font-semibold rounded-lg hover:bg-gray-200 transition"
-        >
-          Download Resume
-        </a>
+       {/* Resume Button */}
+<a
+  href="/Aftab_Alam_Resume.pdf"
+  download="Aftab_Alam_Resume.pdf"
+  className="px-6 py-2 top-0.5 rounded-full font-semibold text-white backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(168,85,247,0.3)]"
+>
+  Download Resume
+</a>
       </div>
     </section>
   );

@@ -8,3 +8,15 @@
   transform: rotateY(180deg);
   transition: transform 0.7s ease;
 }
+
+/* Hide scrollbar but allow scroll */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.font-cartoon {
+  font-family: 'Fredoka', cursive;
+}

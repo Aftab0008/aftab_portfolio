@@ -1,11 +1,11 @@
+import React from "react";
 import Navbar from './components/Navbar';
 import Hero from './pages/Hero';
 import About from './pages/About';
-import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
-import Skills from './pages/Skills';
-import ScrollScene from './components/ScrollScene'; // 👈 Add this
+import ScrollScene from './components/ScrollScene';
+import TabsSection from './components/Tabs'; // 👈 Import tab layout
 
 function App() {
   return (
@@ -14,13 +14,11 @@ function App() {
       <Hero />
       <ScrollScene />
       <About />
-      <Skills />
-      <Projects />
+      <TabsSection /> {/* 👈 Skills + Projects + Certificates in one tab */}
       <Contact />
       <Footer />
     </div>
   );
 }
-
 
 export default App;
