@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import ScrollScene from './components/ScrollScene';
 import TabsSection from './components/Tabs'; // 👈 Import tab layout
 
+
 function App() {
   return (
     <div className="font-sans bg-gray-50 text-gray-900 overflow-x-hidden">
