@@ -1,148 +1,112 @@
 import React from "react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
-const projects = [
+const projectData = [
   {
     name: "Roadside Assistance App",
-    description:
-      "Real-time emergency request system with map, Node.js backend, and Leaflet integration.",
-    logo:
-      "https://img.icons8.com/external-flat-juicy-fish/60/external-roadside-car-repair-flat-flat-juicy-fish.png",
-    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130333.png?updatedAt=1750323197042",
+    description: "Real-time emergency response system with maps and backend alerts.",
+    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130333.png",
     liveLink: "https://car-service-flax.vercel.app",
-    github: "https://github.com/Aftab0008/car_service.git",
+    github: "https://github.com/Aftab0008/car_service",
   },
   {
     name: "Portfolio Website",
-    description:
-      "Modern developer portfolio with 3D Three.js scene, Tailwind, and React animations.",
-    logo: "https://img.icons8.com/color/60/source-code.png",
-    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130500.png?updatedAt=1750323197456",
+    description: "Personal developer portfolio with 3D and animated UI using React Three Fiber.",
+    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130500.png",
     liveLink: "https://aftab-portfolio.vercel.app",
-    github: "https://github.com/Aftab0008/aftab_portfolio.git",
+    github: "https://github.com/Aftab0008/aftab_portfolio",
   },
-   {
-    name: "Portfolio Website",
-    description:
-      "Modern developer portfolio with 3D Three.js scene, Tailwind, and React animations.",
-    logo: "https://img.icons8.com/color/60/source-code.png",
-    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130500.png?updatedAt=1750323197456",
-    liveLink: "https://aftab-portfolio.vercel.app",
-    github: "https://github.com/Aftab0008/aftab_portfolio.git",
+  {
+    name: "Quran Academy Web",
+    description: "Online Islamic learning platform with WhatsApp group support and class bookings.",
+    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-07-07%20115959.png?updatedAt=1751869838243",
+    liveLink: "https://nasim-quran-academy-h67v-omega.vercel.app/",
+    github: "https://github.com/Aftab0008/quran_academy_end.git",
   },
-   {
-    name: "Portfolio Website",
-    description:
-      "Modern developer portfolio with 3D Three.js scene, Tailwind, and React animations.",
-    logo: "https://img.icons8.com/color/60/source-code.png",
-    image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-06-18%20130500.png?updatedAt=1750323197456",
-    liveLink: "https://aftab-portfolio.vercel.app",
-    github: "https://github.com/Aftab0008/aftab_portfolio.git",
-  },
+  {
+  name: "Attar Collection",
+  description: "Elegant attar product gallery with 3D parallax tilt, scroll animations, and responsive design.",
+  image: "https://ik.imagekit.io/wcuhazxr8/Screenshot%202025-07-07%20115558.png?updatedAt=1751869838458", 
+  liveLink: "https://attar-page-nx2kwotl5-aftabs-projects-1a8d2dcd.vercel.app",  
+  github: "https://github.com/Aftab0008/Attar_page.git",   
+},
 ];
 
-function Projects() {
-  const radius = 320;
-
+export default function Projects() {
   return (
-    <section className="relative bg-gray-950 py-28 px-4 overflow-hidden" id="projects">
-      {/* Heading */}
-      <div className="relative z-10 text-center mb-20">
-        <div className="inline-block px-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 shadow-md animate-pulse ring-2 ring-purple-500/30">
-          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-purple-500">
-            My Dev Projects
-          </h2>
-        </div>
-      </div>
+    <section
+      id="projects"
+      className="relative py-20 px-4 sm:px-6 md:px-12 lg:px-20  text-white"
+    >
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 w-[700px] h-[700px] bg-purple-500 opacity-20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 z-0" />
 
-      {/* Mobile layout */}
-      <div className="md:hidden space-y-12 relative z-10">
-        {projects.map((project, index) => (
+      {/* Heading */}
+     <div className="relative z-10 text-center mb-16 h-5">
+  <h2 className="text-2xl sm:text-2xl md:text-4xl lg:text-5xl  font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-400 to-purple-500 animate-pulse">
+    🚀 My Dev Projects
+  </h2>
+</div>
+
+
+      {/* Project Grid */}
+      <motion.div
+        className="relative z-10 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
+        }}
+      >
+        {projectData.map((project, index) => (
           <motion.div
-            key={project.name}
-            initial={{ opacity: 0, y: 30 }}
+            key={index}
+            className="group bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 shadow-xl hover:scale-[1.03] hover:shadow-[0_0_35px_rgba(147,51,234,0.4)] transition-all duration-500 flex flex-col justify-between min-h-[300px]"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-lg"
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <img
               src={project.image}
               alt={project.name}
-              className="rounded-xl mb-4 w-full h-48 object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://placehold.co/400x240?text=Project+Image";
+              }}
+              className="w-full h-40 object-cover rounded-xl mb-4 transition-transform duration-300 group-hover:scale-105"
             />
-            <div className="flex items-center space-x-3 mb-3">
-              <img src={project.logo} alt={project.name} className="w-8 h-8" />
-              <h3 className="text-purple-300 text-xl font-semibold">{project.name}</h3>
+            <div>
+              <h3 className="text-lg font-bold mb-1 text-indigo-300 group-hover:text-purple-400 transition">
+                {project.name}
+              </h3>
+              <p className="text-gray-300 text-sm mb-4">{project.description}</p>
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">{project.description}</p>
-            <div className="flex space-x-4 text-sm mt-4">
+            <div className="flex items-center gap-4 text-sm mt-auto">
               <a
                 href={project.liveLink}
                 target="_blank"
-                className="text-indigo-400 hover:text-indigo-200 flex items-center"
+                rel="noopener noreferrer"
+                className="flex items-center text-indigo-400 hover:text-indigo-200 transition"
               >
                 <FaExternalLinkAlt className="mr-1" /> Live
               </a>
               <a
                 href={project.github}
                 target="_blank"
-                className="text-gray-400 hover:text-gray-200 flex items-center"
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-400 hover:text-gray-200 transition"
               >
                 <FaGithub className="mr-1" /> Code
               </a>
             </div>
           </motion.div>
         ))}
-      </div>
-
-      {/* Circular layout for desktop */}
-      <div className="hidden md:block relative z-10 max-w-6xl mx-auto h-[1000px]">
-        {projects.map((project, index) => {
-          const angle = (index / projects.length) * 2 * Math.PI;
-          const x = radius * Math.cos(angle);
-          const y = radius * Math.sin(angle);
-
-          return (
-            <motion.div
-              key={project.name}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="absolute"
-              style={{
-                left: `calc(40% + ${x}px)`,
-                top: `calc(40% + ${y}px)`,
-                transform: "translate(-50%, -50%)",
-              }}
-            >
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 p-5 rounded-2xl w-64 shadow-lg hover:scale-105 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] transition duration-300 ease-in-out">
-                <img src={project.image} alt={project.name} className="w-full h-36 object-cover rounded-lg mb-3" />
-                <div className="flex items-center space-x-2 mb-2">
-                  <img src={project.logo} alt={project.name} className="w-8 h-8" />
-                  <h3 className="text-purple-300 text-base font-semibold">{project.name}</h3>
-                </div>
-                <p className="text-gray-300 text-xs mb-2">{project.description}</p>
-                <div className="flex space-x-3 text-xs">
-                  <a href={project.liveLink} target="_blank" className="text-indigo-400 hover:text-indigo-200 flex items-center">
-                    <FaExternalLinkAlt className="mr-1" /> Live
-                  </a>
-                  <a href={project.github} target="_blank" className="text-gray-400 hover:text-gray-200 flex items-center">
-                    <FaGithub className="mr-1" /> Code
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-
-      {/* Background glow */}
-      <div className="absolute top-[50%] left-[50%] w-[700px] h-[700px] bg-purple-500 opacity-20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 z-0" />
+      </motion.div>
     </section>
   );
 }
-
-export default Projects;

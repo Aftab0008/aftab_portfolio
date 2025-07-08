@@ -120,7 +120,8 @@ function Hero() {
 
        {/* Resume Button */}
 <a
-  href="/Aftab_Alam_Resume.pdf"
+  href="/Mohammad%20Aftab%20Alam%20.pdf"
+
   download="Aftab_Alam_Resume.pdf"
   className="px-6 py-2 top-0.5 rounded-full font-semibold text-white backdrop-blur-md border border-white/20 bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg hover:shadow-[0_0_25px_rgba(168,85,247,0.3)]"
 >
