@@ -6,10 +6,10 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Load 3D model
 function Model({ scale }) {
-  const gltf = useGLTF("/gaming_desktop_pc/scene.gltf");
-  return <primitive object={gltf.scene} scale={[scale, scale, scale]} />;
+  const model = useGLTF('/gaming_desktop_pc/scene.gltf');
+
+  return <primitive object={model.scene} scale={[scale, scale, scale]} />;
 }
 
 // Animate scene on scroll
